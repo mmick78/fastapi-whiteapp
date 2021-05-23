@@ -66,8 +66,8 @@ def update_beer_param(db_session: Session, beer_parameter: BeerParamUpdateDTO, i
 def delete_beer_param(beer_name, db_session: Session, is_test: bool = False) -> str:
     try:
         item_to_be_deleted = get_beer_param_per_name(db_session=db_session, beer_name=beer_name)
+        db_session.delete(item_to_be_deleted)
         if not is_test:
-            db_session.delete(item_to_be_deleted)
             db_session.commit()
         return 'Beer deleted with success !'
     except SQLAlchemyError as e:
