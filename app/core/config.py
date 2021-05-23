@@ -16,7 +16,7 @@ class BaseConfig(object):
 
     def __init__(self):
         # DB Connection SQLAlchemy
-        self.SQLALCHEMY_DATABASE_URL = f"sqlite:///./{self.DB_NAME}.db"
+        self.SQLALCHEMY_DATABASE_URL = f"sqlite:///{os.path.dirname(os.path.abspath(__file__))}\\{self.DB_NAME}.db"
 
 
 class DevelopmentConfig(BaseConfig):
