@@ -40,7 +40,8 @@ You can also create a virtual environment via Pycharm and install the requiremen
 
 - Add user authentication
 - Add AWS/Azure deployment via Kubernetes
-
+- Add HTTPS via uvicorn parameters
+  
   
 ## API Reference
 
