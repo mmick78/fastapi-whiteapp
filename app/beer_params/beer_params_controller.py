@@ -11,7 +11,7 @@ router = APIRouter()
 
 
 @router.get('/', response_model=List[BeerParamDTo])
-async def get_beer_params(db: Session = Depends(get_db)):
+def get_beer_params(db: Session = Depends(get_db)):
     """
         All the beers available in the Db
     """
@@ -19,7 +19,7 @@ async def get_beer_params(db: Session = Depends(get_db)):
 
 
 @router.get('/{beer_name}', response_model=BeerParamDTo)
-async def get_beer_params(beer_name: str, db: Session = Depends(get_db)):
+def get_beer_params(beer_name: str, db: Session = Depends(get_db)):
     """
         Get specific beer per name available in the Db
     """
@@ -27,7 +27,7 @@ async def get_beer_params(beer_name: str, db: Session = Depends(get_db)):
 
 
 @router.post('', response_model=str)
-async def add_beer_params(beer_param: BeerParamInsertionDTO, db: Session = Depends(get_db)):
+def add_beer_params(beer_param: BeerParamInsertionDTO, db: Session = Depends(get_db)):
     """
         Add a beer in the Db
     """
@@ -35,7 +35,7 @@ async def add_beer_params(beer_param: BeerParamInsertionDTO, db: Session = Depen
 
 
 @router.patch('/', response_model=BeerParamUpdateDTO)
-async def update_beer_params(beer_param: BeerParamUpdateDTO, db: Session = Depends(get_db)):
+def update_beer_params(beer_param: BeerParamUpdateDTO, db: Session = Depends(get_db)):
     """
         Update a  specific beer per name available in the Db
     """
@@ -43,7 +43,7 @@ async def update_beer_params(beer_param: BeerParamUpdateDTO, db: Session = Depen
 
 
 @router.delete('/{beer_name}', response_model=str)
-async def delete_beer_params(beer_name: str, db: Session = Depends(get_db)):
+def delete_beer_params(beer_name: str, db: Session = Depends(get_db)):
     """
         Delete a specific beer per name available in the Db
     """
