@@ -44,4 +44,4 @@ def beer_insertion() -> BeerParamInsertionDTO:
 
 @pytest.fixture(scope='function')
 def fail_beer_insertion() -> BeerParamInsertionDTO:
-    return BeerParamInsertionDTO(**{'name': 'test_stout', 'percentage_alcohol': 0, 'color': 'unknown', 'type': 'NA'})
+    return BeerParamInsertionDTO(**{'name': 'chimay', 'percentage_alcohol': 0, 'color': 'unknown', 'type': 'NA'})
