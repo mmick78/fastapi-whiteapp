@@ -4,6 +4,8 @@ SET "APP_PORT=8080"
 SET "APP_ENV=development"
 SET "APP_PATH=%~dp0"
 SET "ENV_NAME=fastapi"
+SET "RELOAD=NO"
+SET "NB_WORKERS=1"
 
 ECHO Application Path
 ECHO %APP_PATH%
