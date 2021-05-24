@@ -11,9 +11,3 @@ class BeerParamsModel(Base):
     percentage_alcohol = Column(Float, nullable=False)
     color = Column(String, nullable=False)
     type = Column(String, nullable=False)
-
-    def __init__(self, name, percentage_alcohol, color, type):
-        self.name = name
-        self.percentage_alcohol = percentage_alcohol
-        self.color = color
-        self.type = type
