@@ -1,5 +1,6 @@
 import os
 import getpass
+from pathlib import Path
 
 
 class BaseConfig(object):
@@ -16,7 +17,9 @@ class BaseConfig(object):
 
     def __init__(self):
         # DB Connection SQLAlchemy
-        self.SQLALCHEMY_DATABASE_URL = f"sqlite:///{os.path.dirname(os.path.abspath(__file__))}\\{self.DB_NAME}.db"
+        base_path = Path(__file__).parent
+        db_path = (base_path / f"../utils/{self.DB_NAME}.db").resolve()
+        self.SQLALCHEMY_DATABASE_URL = f"sqlite:///{db_path}"
 
 
 class DevelopmentConfig(BaseConfig):
